@@ -1,6 +1,6 @@
 /*James Domingo
  * CS256
- * HW2 - Exercise 2
+ * HW2 - Exercise 4
  * April 11th, 2018
  */
 #include <stdio.h>
