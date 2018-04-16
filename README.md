@@ -1,2 +1,2 @@
 # CS256
-CS256 Assignments for Nima Davarpanah
+Repository for CS256, C++ Programming taught by Nima Davarpanah
