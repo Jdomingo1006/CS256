@@ -1,3 +1,8 @@
+/*James Domingo
+CS256, Professor Nima Davarpanah
+April 19th, 2018
+*/
+
 #include <iostream>
 using namespace std;
 
@@ -35,7 +40,7 @@ int main() {
 	}
 	//Incorrect numbers from user
 	else {
-		cout << "Please enter valid numbers\n";
+		cout << "\nPlease enter valid numbers\n";
 		cout << "Starting population should be more than 2.\n";
 		cout << "No negative numbers for either rate.\n";
 		cout << "Minimum number of 1 year for years.\n";
