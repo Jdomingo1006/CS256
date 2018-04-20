@@ -1,3 +1,7 @@
+/*James Domingo
+CS256, Professor Nima Davarpanah
+April 19th, 2018
+*/
 #include <iostream>
 
 using namespace std;
