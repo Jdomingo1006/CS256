@@ -41,12 +41,14 @@ int main()
 	int array[SIZE];
 	int *reversedArray;
 	int size;
+	int j = 0;
 
 	//User inputted integers for an array. Max integer of 6.
-	cout << "enter " << SIZE << " interfer for the array:";
-	for (int i = 0; i < SIZE; i++)
-		cin >> array[i];
 
+	for (int i = 0; i < SIZE; i++) {
+		cout << "Enter digit "<< (i + 1)<<":";
+		cin >> array[i];
+	}
 	//Calls array function. Prints out user inputted integers as array
 	cout << "The Original Array: ";
 	printArray(array, 6);
