@@ -3,9 +3,7 @@ CS256, Professor Nima Davarpanah
 April 19th, 2018
 */
 #include <iostream>
-
 #include <string> 
-
 using namespace std;
 class TicTacToe
 {
@@ -72,7 +70,7 @@ public:
 	} 
 
 	//Checks to see if anyone has won. If not, then it calls to see if the game was a draw
-	bool CheckFinalResult(char Player, bool GameOver)
+	bool gameResult(char Player, bool GameOver)
 	{
 		//List of possible tic tac toe possible wins
 		for (int i = 0; i < 3; i++) 
@@ -102,7 +100,7 @@ public:
 		return GameOver;
 	}
 	//Function for when the game goes to a draw
-	bool CheckGameDraw(bool GameOver)
+	bool gameDraw(bool GameOver)
 	{
 		int n = 1;
 		int i = 0;
@@ -157,14 +155,14 @@ int main(){
 
 		//Calls all the functions in order to play 
 		myGame.PlayerTurn(num, Player);
-		GameOver = myGame.CheckFinalResult(Player, GameOver);
-		GameOver = myGame.CheckGameDraw(GameOver);
+		GameOver = myGame.gameResult(Player, GameOver);
+		GameOver = myGame.gameDraw(GameOver);
 
-		//Once its gameover, it'll reset the board and reassign boolean value to false
+		//Checks to see if its gameover
 		if (GameOver == true)
 		{
-			myGame.SetGameBoard();
-			GameOver = false;
+			done = true;
+			cout << "Thanks for playing!\n\n\n";
 		}
 	} while (!done);
 	return 0;
