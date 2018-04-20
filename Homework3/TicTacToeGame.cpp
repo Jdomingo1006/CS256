@@ -1,5 +1,11 @@
+/*James Domingo
+CS256, Professor Nima Davarpanah
+April 19th, 2018
+*/
 #include <iostream>
+
 #include <string> 
+
 using namespace std;
 class TicTacToe
 {
