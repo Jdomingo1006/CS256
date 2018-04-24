@@ -1,3 +1,7 @@
+/*James Domingo
+*CS256
+*April 24, 2018
+*/
 # include <iostream>
 # include <iomanip>
 using namespace std;
