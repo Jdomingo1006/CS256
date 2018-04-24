@@ -142,7 +142,7 @@ int main()
 	return 0;
 }
 
-//Function for listOfSeats. Called in the beginning of the program (line 27)
+//Function for listOfSeats. Called in the beginning of the program (line 31)
 void listOfSeats() {
 		const char boughtSeat = '#';
 		const char availableSeat = '*';
