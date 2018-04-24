@@ -8,8 +8,9 @@ using namespace std;
 void listOfSeats();
 int main()
 {
-
+	//Declaration and assignment of variables.
 	int choice;
+	int totalSeats = 450;
 	const int rowCount = 15;
 	int rowNumber[rowCount];
 	const char boughtSeat = '#';
@@ -46,8 +47,10 @@ int main()
 		cout << "1) Sell a ticket" << endl;
 		cout << "2) List the current seating chart" << endl;
 		cout << "3) How many tickets sold" << endl;
-		cout << "4) Exit" << endl;
-		cout << "User's selection (1, 2, 3, or 4): " << endl;
+		cout << "4) Theater seating information" << endl;
+		cout << "5) Seat availability for each row" << endl;
+		cout << "6) Exit" << endl;
+		cout << "User's selection (1, 2, 3, 4, 5, or 6): " << endl;
 		cin >> choice;
 
 		//Switch case depending on what number user chose
@@ -127,15 +130,31 @@ int main()
 			cout << "----------------------" << endl;
 			cout << "\n\n";
 			break;
-		//Quits the program
+		//Lists seats sold and number of seats left
 		case 4:
+			cout << "----------------------" << endl;
+			cout << "Total seats sold: " << tixSold << endl;
+			cout << "Seats left: " << (totalSeats - tixSold) << endl;
+			cout << "----------------------" << endl;
+			break;
+		//Lists available number of seats in each row
+		//WORK ON THIS LATER
+		case 5:
+			cout << "----------------------" << endl;
+			for (int i = 0; i < 15; i++) {
+				cout << "Row " << i + 1 << " has  15 seats left" << endl;
+			}
+			cout << "----------------------" << endl;
+			break;
+		//Quits the program
+		case 6:
 			//Only option to break the do-while loop
 			cout << "Thank you for using Theater Seating!" << endl;
 			done = true;
 			break;
 		//If user didnt choose any of the options
 		default:
-			cout << "Please enter 1, 2, 3, or 4!";
+			cout << "Please enter 1, 2, 3, 4, 5, or 6!";
 			break;
 		}
 	} while (!done);
