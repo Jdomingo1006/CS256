@@ -4,12 +4,14 @@
 */
 # include <iostream>
 # include <iomanip>
+#include <string>
 using namespace std;
 void listOfSeats();
 int main()
 {
 	//Declaration and assignment of variables.
-	int choice;
+	int choice, rowChoice;
+	int counter = 0, column1 = 0;
 	int totalSeats = 450;
 	const int rowCount = 15;
 	int rowNumber[rowCount];
@@ -62,7 +64,7 @@ int main()
 			cout << endl;
 			do {
 				//Checks user input. Row must be 1-15 and columns must be 1-30
-				cout << "Row# :";
+				cout << "Row #:";
 				cin >> userRow;
 				if (userRow < 1 || userRow > 15) {
 					cout << "Please enter a valid row number."<<endl;
@@ -71,7 +73,7 @@ int main()
 			} while (userRow < 1 || userRow > 15);
 			do {
 
-				cout << "Column# :";
+				cout << "Column #:";
 				cin >> userColumn;
 				if (userColumn <0 || userColumn > 30) {
 					cout << "Please enter a valid column number."<<endl;
@@ -138,14 +140,26 @@ int main()
 			cout << "----------------------" << endl;
 			break;
 		//Lists available number of seats in each row
-		//WORK ON THIS LATER
 		case 5:
-			cout << "----------------------" << endl;
-			for (int i = 0; i < 15; i++) {
-				cout << "Row " << i + 1 << " has  15 seats left" << endl;
+			do {
+				cout << "Choose row: " << endl;
+				cin >> rowChoice;
+				if (rowChoice < 1 || rowChoice > 15) {
+					cout << "Please enter a valid row number." << endl;
+				}
+
+			} while (rowChoice < 1 || rowChoice > 15);
+			for (int i = 0; i < column; i++) {
+				if (seats[rowChoice - 1][column1 - 1 + i] != boughtSeat) {
+					counter++;
+				}
 			}
 			cout << "----------------------" << endl;
-			break;
+			cout << "Row " << rowChoice<< " has " << counter<<" seats left" << endl;
+			cout << "----------------------" << endl;
+			cout << "\n" << endl;
+			counter = 0;
+			break;	
 		//Quits the program
 		case 6:
 			//Only option to break the do-while loop
@@ -161,7 +175,7 @@ int main()
 	return 0;
 }
 
-//Function for listOfSeats. Called in the beginning of the program (line 31)
+//Function for listOfSeats. Called in the beginning of the program (line 34)
 void listOfSeats() {
 		const char boughtSeat = '#';
 		const char availableSeat = '*';
@@ -183,4 +197,4 @@ void listOfSeats() {
 			}
 		}
 		cout << endl;
-	}
+}
