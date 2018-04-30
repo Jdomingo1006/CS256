@@ -1,4 +1,4 @@
-/*#include <cstdio> 
+#include <cstdio> 
 #include <iostream> 
 using namespace std;
 class Rational {
@@ -61,4 +61,4 @@ int main(int argc, char ** argv) {
 	cout << a << " * " << b << " = " << a * b << endl;
 	cout << a << " / " << b << " = " << a / b << endl;
 	return 0;
-}*/
+}
