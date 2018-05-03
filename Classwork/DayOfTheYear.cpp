@@ -60,7 +60,7 @@ void DayOfYear::setMonths() {
 	months[11] = "December";
 }
 
-//Being worked on. Used to print and called in main function
+//Returns the month name and day of user input day
 void DayOfYear::print() {
 	int month = 0;
 	//While loop - checks until it reaches user input day
