@@ -1,7 +1,3 @@
-/*CS256
-*May 3rd, 2018
-*James Domingo
-*/
 #include <iostream> 
 #include <string>
 using namespace std;
@@ -12,7 +8,8 @@ private:
 	string months[12]; //Array string for month names
 	int EndDayOfMonth[13]; //Holds number of days after each month to help differentiating months
 	
-	static string DayAndMonth;
+	//Static member variables
+	static string DayAndMonth; 
 	static int continuedDays;
 
 public:
@@ -22,17 +19,17 @@ public:
 	void setMonths(); //Month names
 };
 
-string DayOfYear::DayAndMonth = "";
-int DayOfYear::continuedDays = 0;
+string DayOfYear::DayAndMonth = ""; //Holds month name
+int DayOfYear::continuedDays = 0; //Holds days
 
 //Constructor
 DayOfYear::DayOfYear(int d) {
 	day = d;
 }
 
-//Note: Need to get the day after each month
+//Total days after each month
 void DayOfYear::setEndDayOfMonth() {
-	EndDayOfMonth[0] = 0; //First Day
+	EndDayOfMonth[0] = 0; //New Years
 	EndDayOfMonth[1] = 31; //January
 	EndDayOfMonth[2] = 59; //Febuarary
 	EndDayOfMonth[3] = 90; //March
@@ -66,7 +63,7 @@ void DayOfYear::setMonths() {
 //Being worked on. Used to print and called in main function
 void DayOfYear::print() {
 	int month = 0;
-	//While loop - Goes through EndDayOfMonth function
+	//While loop - checks until it reaches user input day
 	while (EndDayOfMonth[month] < day) {
 		month++;
 	}
@@ -79,18 +76,18 @@ void DayOfYear::print() {
 int main() {
 	int dayInput;
 	//User input
-	cout << "Enter a day-number between 1 and 365: ";
+	cout << "Enter a day NUMBER between 1 and 365: ";
 		cin >> dayInput;
 	//User input check.
 	while (dayInput < 1 || dayInput >365) {
-		cout << "Please enter a correct number" << endl;
-		cout << "Enter day-number between 1 and 365: ";
+		cout << "Please enter a correct number." << endl;
+		cout << "Enter day NUMBER between 1 and 365: ";
 		cin >> dayInput;
 	}
-
-	DayOfYear d(dayInput);
-	d.setMonths();
-	d.setEndDayOfMonth();
-	d.print();
+	//Creates object
+	DayOfYear userDay(dayInput);
+	userDay.setMonths(); //Sets month
+	userDay.setEndDayOfMonth(); //Sets day for month
+	userDay.print(); //calls print function and returns day & month
 	return 0;
 }
