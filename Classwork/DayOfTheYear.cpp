@@ -1,3 +1,7 @@
+/*CS256
+*May 3rd, 2018
+*James Domingo
+*/
 #include <iostream> 
 #include <string>
 using namespace std;
