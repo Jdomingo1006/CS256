@@ -83,11 +83,11 @@ public:
 	int getCustomerNumber();
 	bool getMailingList();
 };
-//Setters
+//Setters - CustomerData
 void CustomerData::setCustomerNumber(int numb) { customerNumber = numb; }
 void CustomerData::setMailingList(bool answer) { mailingList = answer; }
 
-//Getters
+//Getters - CustomerData
 int CustomerData::getCustomerNumber() { return customerNumber; }
 bool CustomerData::getMailingList() { return mailingList; }
 
@@ -109,7 +109,7 @@ public:
 	double getDiscountLevel();
 };
 
-//Setters
+//Setters - PreferredCustomer
 void PreferredCustomer::setPurchasesAmount() {
 	double spent;
 	cout << "Total amount spent: " << endl;
@@ -132,7 +132,7 @@ void PreferredCustomer::setDiscountLevel() {
 	}
 }
 
-//Getters
+//Getters - PreferredCustomer
 double PreferredCustomer::getPurchasesAmount() {
 	return purchaseAmount;
 }
