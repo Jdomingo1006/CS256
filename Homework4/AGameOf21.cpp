@@ -1,4 +1,8 @@
-
+/*
+*James Domingo
+*CS256
+*May 10th, 2018
+*/
 #include "stdafx.h"
 #include <iostream> 
 #include <ctime>
