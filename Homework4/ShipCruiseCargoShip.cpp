@@ -22,16 +22,18 @@ public:
 		shipName = name;
 		shipBuilt = year;
 	}
+	//Setters
 	void setShipName(string name) {
 		shipName = name;
 	}
 	void setShipBuilt(string year) {
 		shipBuilt = year;
 	}
-
+	//Getters
 	string getShipName() { return shipName; }
 	string getShipBuilt() { return shipBuilt; }
 
+	//Print function
 	virtual void print() {
 		cout << "----------Displaying Ship---------------" << endl;
 		cout << "Ship's Name: " << getShipName() << endl;
@@ -44,10 +46,11 @@ class CruiseShip: public Ship{
 private:
 	int passengers;
 public:
+	//Constructor
 	CruiseShip(string name, string year, int pass) :Ship(name, year) {
 		passengers = pass;
 	}
-
+	//Print function
 	virtual void print() {
 		cout << "\n\n" << endl;
 		cout << "----------Displaying Cruise ship---------------" << endl;
@@ -63,9 +66,12 @@ class CargoShip :public Ship {
 private:
 	int tonnage;
 public:
+	//Consturctor
 	CargoShip(string name, string year, int ton) :Ship(name, year) {
 		tonnage = ton;
 	}
+
+	//Print function
 	virtual void print() {
 		cout << "\n\n" << endl;
 		cout << "----------Displaying Cargo ship---------------" << endl;
@@ -77,11 +83,14 @@ public:
 
 //Main - function
 int main() {
+
+	//Pointer and arrays
 	Ship *shipTypes[3] = { new Ship("Limitless Paper","2005"), 
 		new CruiseShip("in a ","2006", 1738), 
 		new CargoShip("Paperless world","2007", 20) 
 	};
 
+	//For loop to go through each item in array and call the print function
 	for (int i = 0; i < 3; i++) {
 		shipTypes[i]->print();
 	}
