@@ -112,7 +112,7 @@ public:
 //Setters - PreferredCustomer
 void PreferredCustomer::setPurchasesAmount() {
 	double spent;
-	cout << "Total amount spent: " << endl;
+	cout << "Total amount spent: $";
 	cin >> spent;
 	purchaseAmount = spent;
 
@@ -140,52 +140,54 @@ double PreferredCustomer::getDiscountLevel() {
 	return discountLevel;
 }
 
-
+//Main function
 int main() {
 	PreferredCustomer customer;
 	string userfirstN, userlastN, userAddress, userCity, userState;
 	long int userZip, userPhone;
 	int userId;
 
-	cout << "Enter first name: " << endl;
+	//User input information
+	cout << "Enter first name: ";
 	cin >> userfirstN;
 	customer.setFirstName(userfirstN);
-	cout << "Enter last name:" << endl;
+	cout << "Enter last name: ";
 	cin >> userlastN;
 	customer.setLastName(userlastN);
-	cout << "Enter address:" << endl;
+	cout << "Enter address: ";
 	cin >> userAddress;
 	customer.setAddress(userAddress);
-	cout << "Enter city:" << endl;
+	cout << "Enter city: ";
 	cin >> userCity;
 	customer.setCity(userCity);
-	cout << "Enter state:" << endl;
+	cout << "Enter state: ";
 	cin >> userState;
 	customer.setState(userState);
-	cout << "Enter zip code:" << endl;
+	cout << "Enter zip code: ";
 	cin >> userZip;
 	customer.setZip(userZip);
-	cout << "Enter customer number:" << endl;
+	cout << "Enter customer number: ";
 	cin >> userId;
 	customer.setCustomerNumber(userId);
 	customer.setMailingList(true);
 	customer.setPurchasesAmount();
 	customer.setDiscountLevel();
-	cout << "Enter phone number:" << endl;
+	cout << "Enter phone number: ";
 	cin >> userPhone;
 	customer.setPhone(userPhone);
 
+	//Final printout
 	cout << "\n\nCustomer Data shown below:" << endl;
-	cout << "First Name:" << customer.getFirstName() << endl;
-	cout << "Last Name:" << customer.getLastName() << endl;
-	cout << "Customer Number:" << customer.getCustomerNumber() << endl;
-	cout << "City name:" << customer.getCity() << endl;
-	cout << "State name:" << customer.getState() << endl;
-	cout << "Zip Code:" << customer.getZip() << endl;
-	cout << "Phone number:" << customer.getPhone() << endl;
-	cout << "Mailing list:" << customer.getMailingList() << endl;
-	cout << "Customer purchase amount:" << customer.getPurchasesAmount() << endl;
-	cout << "Customer discount:" << customer.getDiscountLevel() << "%" << endl;
+	cout << "First Name: " << customer.getFirstName() << endl;
+	cout << "Last Name: " << customer.getLastName() << endl;
+	cout << "Customer Number: " << customer.getCustomerNumber() << endl;
+	cout << "City name: " << customer.getCity() << endl;
+	cout << "State name: " << customer.getState() << endl;
+	cout << "Zip Code: " << customer.getZip() << endl;
+	cout << "Phone number: " << customer.getPhone() << endl;
+	cout << "Mailing list: " << customer.getMailingList() << endl;
+	cout << "Customer purchase amount: $" << customer.getPurchasesAmount() << endl;
+	cout << "Customer discount: " << customer.getDiscountLevel() << "%" << endl;
 
 	return 0;
 }
