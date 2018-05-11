@@ -51,12 +51,15 @@ int main() {
 	cout << "\nGame has finished." << endl;
 	cout << "Your total: " << playerScore << endl;
 	cout << "Computer total: " << computerScore << endl;
+	//Computer and Player has same score
 	if (playerScore <= 21 && playerScore == computerScore) {
 		cout << "It was a tie!" << endl;;
 	}
-	else if (playerScore <= 21 && playerScore > computerScore) {
+	//Player wins if its (less than 21 and a higher than computer) or (less than 21 and computer scores higher than 21)
+	else if ((playerScore <= 21 && playerScore > computerScore) || (playerScore <= 21 && computerScore > 21)) {
 		cout << "You have won!" << endl;
 	}
+	//Other case = Player lost
 	else {
 		cout << "You have lost!" << endl;;
 	}
