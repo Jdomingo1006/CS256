@@ -6,11 +6,11 @@ using namespace std;
 /************Account Class being***************/
 class Account {
 public:
-	double interest;
-	double charge;
-	double balance;
-	int deposits;
-	int withdrawal;
+	double interest = 0.0;
+	double charge = 0.0;
+	double balance = 0.0;
+	int deposits = 0;
+	int withdrawal = 0;
 
 	Account();
 	virtual void calcInt();
@@ -24,12 +24,6 @@ Account::Account() {
 	cout << "Enter interest rate: ";
 	cin >> interest;
 }
-
-void Account::calcInt() {
-	double monthInterestRate = (interest / 12);
-	double monthInterest = balance * monthInterestRate;
-	balance = balance + monthInterest;
-}
 void Account::depositCount(double inputDeposit) {
 	balance += inputDeposit;
 	deposits++;
@@ -38,6 +32,12 @@ void Account::withdrawCount(double inputDeposit) {
 	balance -= inputDeposit;
 	withdrawal++;
 }
+void Account::calcInt() {
+	double monthInterestRate = (interest / 12);
+	double monthInterest = balance * monthInterestRate;
+	balance = balance + monthInterest;
+}
+
 void Account::monthlyProc() {
 	calcInt();
 	balance -= charge;
@@ -71,6 +71,7 @@ void SavingsAccount::withdraw(double inputAmount) {
 void SavingsAccount::deposit(double inputAmount) {
 	if ((balance + inputAmount) > 25) {
 		stateOfAccount = 1;
+		cout << "Deposit saved." << endl;
 		Account::depositCount(inputAmount);
 	}
 }
@@ -80,7 +81,7 @@ void SavingsAccount::monthlyProc() {
 	}
 	if (balance < 25)
 		stateOfAccount = 0;
-	cout << "Cost of service charge: " << charge << endl;
+	cout << "Cost of service charge: $" << charge << endl;
 	Account::monthlyProc();
 }
 /***************Savings Account Class ends***********/
@@ -115,6 +116,7 @@ void PrintMenu(SavingsAccount& userSavings, Checking& userCheckings) {
 	double userDeposit, userWithdraw;
 	bool done = false;
 	do {
+		cout << "\n\n" << endl;
 		cout << "Welcome to the bank!" << endl;
 		cout << "1. Deposit to your Savings Account" << endl;
 		cout << "2. Deposit to your Checkings Account" << endl;
