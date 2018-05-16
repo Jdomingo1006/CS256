@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
-/*using namespace std;
+using namespace std;
 
 int main() {
 	int x = 25;
@@ -15,4 +15,4 @@ int main() {
 	cout << "The size of x is " << sizeof(x) << " bytes\n"; //4 bytes
 	cout << "The value in x is " << x << endl; //Prints out 25
 	return 0;
-}*/
+}
