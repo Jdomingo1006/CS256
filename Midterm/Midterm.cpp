@@ -1,7 +1,7 @@
 /*
 *James Domingo
 *CS256
-* May 15th 2018
+* May 15th 2018	
 */
 #include "stdafx.h"
 #include <iostream>
@@ -17,7 +17,6 @@ private:
 	char sex;
 	Human();
 protected:
-	//Constructor - wont take in string for names...
 	Human(string inputName, int inputAge, char inputSex) {
 		name = inputName;
 		age = inputAge;
@@ -34,6 +33,7 @@ public:
 	char getSex() { return sex; }
 	//virtual work
 	virtual void work();
+
 	friend class Parent;
 	friend class Child;
 
