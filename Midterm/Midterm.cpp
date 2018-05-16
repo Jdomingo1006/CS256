@@ -1,3 +1,8 @@
+/*
+*James Domingo
+*CS256
+* May 15th 2018
+*/
 #include "stdafx.h"
 #include <iostream>
 #include <vector>
@@ -29,6 +34,8 @@ public:
 	char getSex() { return sex; }
 	//virtual work
 	virtual void work();
+	friend class Parent;
+	friend class Child;
 
 };
 
